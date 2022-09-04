@@ -43,12 +43,12 @@ function Pokemons() {
   return (
     <React.Fragment>
       <Navbar />
-      <div className="App max-w-4xl mx-auto">
+      <div className="App max-w-4xl mx-auto px-2">
         {status === "pending" && <Spinner />}
         {status === "idle" && <div>IDDLE</div>}
         {status === "success" && (
           <React.Fragment>
-            <section className="grid grid-cols-4 gap-2">
+            <section className="grid grid-cols-2 sm:grid-cols-4  gap-2">
               {dataPokemon.map((val: any, i: number) => {
                 return (
                   <PokemonCard

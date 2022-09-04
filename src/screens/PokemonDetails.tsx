@@ -26,7 +26,7 @@ export default function PokemonDetails() {
         {status === "idle" && <div>Idle...</div>}
         {status === "pending" && <Spinner />}
         {status === "success" && (
-          <div className=" flex flex-row bg-white space-x-4 items-center">
+          <div className=" flex flex-col sm:flex-row bg-white sm:space-x-4 items-center">
             <div className="w-64">
               <PokemonCard
                 id={dataPokemon?.id}

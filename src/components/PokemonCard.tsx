@@ -11,7 +11,7 @@ type IProps = {
 export default function PokemonCard(props: IProps) {
   return (
     <Link to={`/details/${props.id}`}>
-      <div className="border rounded-lg bg-slate-100 flex flex-col items-center py-4">
+      <div className="border rounded-lg bg-slate-100 flex flex-col items-center py-4 overflow-hidden relative">
         <span className="text-8xl absolute text-slate-200">{props.id}</span>
         <div className="relative text-center">
           <img
@@ -22,8 +22,11 @@ export default function PokemonCard(props: IProps) {
           <h3 className="text-2xl text-slate-700">{props.name}</h3>
           <div className="flex justify-center items-center space-x-2">
             {props?.types?.map((val: any, index: number) => (
-              <div className="flex items-center space-x-2 text-orange-500">
-                <div key={index} className="uppercase font-normal text-xs ">
+              <div
+                key={index}
+                className="flex items-center space-x-2 text-orange-500"
+              >
+                <div className="uppercase font-normal text-xs ">
                   {val.type.name}
                 </div>
                 {index !== props?.types?.length - 1 && (
